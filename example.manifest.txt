@@ -1,0 +1,10 @@
+bam	sampleID	sex
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch5/P-Pseq_0001-P-A/1_WES-3.1_06262013_172116/Pseq_batch5_P-Pseq_0001-P-A_1.recal.sorted.bam	P-PSeq-0001-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch5/P-Pseq_0002-P-A/1_WES-3.1_06262013_172119/Pseq_batch5_P-Pseq_0002-P-A_1.recal.sorted.bam	P-PSeq-0002-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch5/P-Pseq_0003-P-A/1_WES-3.1_06262013_172122/Pseq_batch5_P-Pseq_0003-P-A_1.recal.sorted.bam	P-PSeq-0003-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch5/P-Pseq_0004-P-A/1_WES-3.1_06262013_172124/Pseq_batch5_P-Pseq_0004-P-A_1.recal.sorted.bam	P-PSeq-0004-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch5/P-Pseq_0005-P-A/1_WES-3.1_06262013_172128/Pseq_batch5_P-Pseq_0005-P-A_1.recal.sorted.bam	P-PSeq-0005-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch6/P-PSeq0006-P-A/1_WES-3.1_07202013_102113/Pseq_batch6_P-PSeq0006-P-A_1.recal.sorted.bam	P-PSeq-0006-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch6/P-PSeq0007-P-A/1_WES-3.1_07202013_102116/Pseq_batch6_P-PSeq0007-P-A_1.recal.sorted.bam	P-PSeq-0007-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch6/P-PSeq0008-P-A/1_WES-3.1_07202013_102119/Pseq_batch6_P-PSeq0008-P-A_1.recal.sorted.bam	P-PSeq-0008-P-A	M
+/mnt/isilon/cbmi/variome/SyncIQ/seqrepo/run/U01/Pseq_batch6/P-PSeq0009-P-A/1_WES-3.1_07202013_102122/Pseq_batch6_P-PSeq0009-P-A_1.recal.sorted.bam	P-PSeq-0009-P-A	M

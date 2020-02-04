@@ -1,0 +1,20 @@
+name: edm_env
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - ggd-genomics
+dependencies:
+  - snakemake=5.9.1
+  - mosdepth=0.2.7
+  - r-base=3.6.2
+  - r-optparse=1.6.4
+  - r-devtools
+  - r-exomedepth=1.1.15
+  - r-clustermq=0.8.8.1
+  - r-r.utils=2.9.2
+  - r-dplyr=0.8.3
+  - r-purrr=0.3.3
+  - zeromq=4.3.2
+  - r-profvis=0.3.6
+  - r-data.table=1.12.8

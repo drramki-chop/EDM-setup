@@ -1,0 +1,21 @@
+# required
+cohort.name: Epi4k
+
+# required
+manifest: pediseq.edm.manifest.txt
+
+# required
+outputDir: ./transition_prob
+
+# required
+transition.probability: 1e-4
+
+# required
+bed.file: 
+
+## required
+scheduler: sge
+
+##optional 
+template: template/sge_template
+
