@@ -5,7 +5,14 @@
 ## Step 1: Setup the environment
 EDM depends on several software tools including R packages. We use a conda environment to manage the dependencies. You can create a conda environment with all the dependencies using the edm_environment.yml file provided here. If you would like a different name for your environment, edit the yml file.
 
-`conda env create -f edm_environment.yml`
+`git clone https://github.com/drramki-chop/EDM.git`
 
+`conda env create -f edm_environment.yml`
+`conda activate edm_environment`
 
 ## Step 2: Install EDM package
+
+Within R, install the EDM package from source.
+
+`>install.packages("EDM_0.0.1.tar.gz",type="source",repos=NULL)`
+
