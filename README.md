@@ -23,7 +23,8 @@ clustermq is installed as part of the conda environment. Now, we have to setup a
 
 For SGE:
 
-`#$ -N {{ job_name }}               # job name
+```
+#$ -N {{ job_name }}               # job name
 #$ -q default                      # submit to queue named "default"
 #$ -j y                            # combine stdout/error in one file
 #$ -o {{ log_file | /dev/null }}   # output file
@@ -33,6 +34,7 @@ For SGE:
 #$ -pe {{ cores | 1 }}             # number of cores to use per job
 
 ulimit -v $(( 1024 * {{ memory | 4096 }} ))
-CMQ_AUTH={{ auth }} R --no-save --no-restore -e 'clustermq:::worker("{{ master }}")'`
+CMQ_AUTH={{ auth }} R --no-save --no-restore -e 'clustermq:::worker("{{ master }}")'
+```
 
 Please refer to clustermq documentation for other HPC environments.
