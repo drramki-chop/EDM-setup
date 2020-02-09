@@ -121,3 +121,12 @@ Rscript -e EDM::wrapper.script(input.yaml)
 ```
 qsub ./edm.submit.script.sh
 ```
+
+
+## Considerations
+
+1. ExomeDepth performs best when the cohort is homogeneous in terms of sample preparation, library prep, exome capture kit,  sequencing platform and sequencing center. If you gather samples from different sources, this may not be the best tool. Always test the pipeline first with known variants.
+
+2. CNV calling in chromosome X is challenging as it depends only on ~6000 exons. A decent number of samples is required to get reliable results.
+
+3. We recommend a transition probability of 1e-8 for balanced performance. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
