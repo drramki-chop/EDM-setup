@@ -83,8 +83,9 @@ EDM forces a certain format for the workflow with minimal mandated metadata (bam
 | bams/sample2.bam | ALGS-1M| M |
 | bams/sample3.bam | ALGS-1F| F |
 
-F - female; M - male
-
+ - F - female; M - male
+ - Absolute paths are required for bam files
+ 
 ## Step 6: Create a configuration file (.yml)
 
 EDM requires a configuration file with four mandated fields (cohort.name, manifest, outputDir, scheduler). Providing `transition.probability` is optional. We recommend a transition probability of 1e-8 to reduce the number of false-positives without compromising the sensitivity to detect rare variants. If you want to go for more sensitivity, 1e-4 should work better.
@@ -97,16 +98,19 @@ cohort.name: Epi4k
 manifest: pediseq.edm.manifest.txt
 
 # required
-outputDir: ./
+output.directory: ./
 
-# optional
-transition.probability: 1e-4
+# required
+transition.probability: 1e-8
 
-# optional (will use the internal exon definitions if this is not provided)
+# required
 bed.file: # bedfile path or leave blank
 
 ## required
-scheduler: sge
+hpc.scheduler: sge
+
+##optional 
+clustermq.template: ## user defined template - if provided certain options may change.
 ```
 
 ## Step 7: Run the pipeline
@@ -133,9 +137,9 @@ qsub ./edm.submit.script.sh
 ## Considerations
 
 1. If EDM fails, think about following reasons:
-  - See if the input files conforms to the requirements (input.yml/ manifest/ bed file) and appropriate permissions exist for     the output folders.
-  - Absolte paths are provided for bam files and the index files should be in the same folder.
-  - See if there is enough memory/ resources provided in the template.
+    - See if the input files conforms to the requirements (input.yml/ manifest/ bed file) and appropriate permissions exist for the output folders.
+    - Absolte paths are provided for bam files and the index files should be in the same folder.
+    - See if there is enough memory/ resources provided in the template.
 
 2. ExomeDepth performs best when the cohort is homogeneous in terms of sample preparation, library prep, exome capture kit,  sequencing platform and sequencing center. If you gather samples from different sources, this may not be the best tool. Always test the pipeline first with known variants.
 
