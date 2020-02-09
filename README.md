@@ -47,7 +47,7 @@ We recently published a workflow ([Rajagopalan R et. al., 2020](https://genomeme
 
 We provide the workflow to filter the exons with low mean mappability if you have your own bed file or use the exon definitions in ExomeDepth. However, you can simply use the `exons.hg19.mappability.filtered` object provided in the EDM package (`data(exons.hg19.mappability.filtered`).
 
-# Workflow to filter the exons with low mean mappability (< 0.7)
+### Workflow to filter the exons with low mean mappability (< 0.7)
 
 In R:
 
@@ -65,6 +65,19 @@ wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability
 bigWigAverageOverBed wgEncodeCrgMapabilityAlign36mer.bigWig exons.hg19.bed exons.hg19.mappability.tab
 cat exons.hg19.mappability.tab | awk '$NF >= 0.7' | cut -f1-4 > exons.hg19.mappability.bed  #for use in EDM workflow
 ```
+
+## Step 5: Creat a manifest file for the samples
+
+EDM forces a certain format for the workflow with minimal mandated metadata (bam, sampleID, sex). Column names should be the same in the manifest file (as the functions use them).
+
+| bam   |      Are      |  Cool |
+|:--------:|:-------------:|:-----:|
+| bams/sample1.bam | ALGS-1P| F |
+| bams/sample2.bam | ALGS-1M| M |
+| bams/sample3.bam | ALGS-1F| F |
+
+
+
 
 
 
