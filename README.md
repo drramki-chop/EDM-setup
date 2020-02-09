@@ -44,7 +44,7 @@ Please refer to [clustermq](https://cran.r-project.org/web/packages/clustermq/vi
 We recently published a workflow ([Rajagopalan R et. al., 2020](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0) demonstrating that excluding exons with low mean mappability reduces the number of false-positives originating from the repetitive regions of the exome while maintaining the same sensitivity.
 
 ```diff
-This excludes some ~4.5% of the exons incuding 0.6% of the exons that may be clinically-relevant.
+- This excludes some ~4.5% of the exons incuding 0.6% of the exons that may be clinically-relevant.
 ```
 We provide the workflow to filter the exons with low mean mappability if you have your own bed file or use the exon definitions in ExomeDepth. However, you can simply use the `exons.hg19.mappability.filtered` object provided in the EDM package (`data(exons.hg19.mappability.filtered`).
 
@@ -74,7 +74,7 @@ If you have your own exon definitions/ BED file, you can directly use the bigWig
 
 EDM forces a certain format for the workflow with minimal mandated metadata (bam, sampleID, sex). 
 ```diff
-Column names should be the same in the manifest file (as the functions use them).</span>
+- Column names should be the same in the manifest file (as the functions use them).
 ```
 
 | bam   |      sampleID      |  sex |
@@ -132,8 +132,13 @@ qsub ./edm.submit.script.sh
 
 ## Considerations
 
-1. ExomeDepth performs best when the cohort is homogeneous in terms of sample preparation, library prep, exome capture kit,  sequencing platform and sequencing center. If you gather samples from different sources, this may not be the best tool. Always test the pipeline first with known variants.
+1. If EDM fails, think about following reasons:
+  - See if the input files conforms to the requirements (input.yml/ manifest/ bed file) and appropriate permissions exist for     the output folders.
+  - Absolte paths are provided for bam files and the index files should be in the same folder.
+  - See if there is enough memory/ resources provided in the template.
 
-2. CNV calling in chromosome X is challenging as it depends only on ~6000 exons. A decent number of samples is required to get reliable results.
+2. ExomeDepth performs best when the cohort is homogeneous in terms of sample preparation, library prep, exome capture kit,  sequencing platform and sequencing center. If you gather samples from different sources, this may not be the best tool. Always test the pipeline first with known variants.
 
-3. We recommend a transition probability of 1e-8 for balanced performance. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
+3. CNV calling in chromosome X is challenging as it depends only on ~6000 exons. A decent number of samples is required to get reliable results.
+
+4. We recommend a transition probability of 1e-8 for balanced performance. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
