@@ -136,6 +136,7 @@ qsub ./edm.submit.script.sh
 
 ## Considerations
 
+### General
 1. If EDM fails, think about following reasons:
     - See if the input files conforms to the requirements (input.yml/ manifest/ bed file) and appropriate permissions exist for the output folders.
     - Absolte paths are provided for bam files and the index files should be in the same folder.
@@ -146,6 +147,19 @@ qsub ./edm.submit.script.sh
 3. CNV calling in chromosome X is challenging as it depends only on ~6000 exons. A decent number of samples is required to get reliable results.
 
 4. We recommend a transition probability of 1e-8 for balanced performance. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
+
+###  For larger cohorts
+
+1. We have tested this workflow with ~2000 samples. We anticipate this pipeline will work for several thousands of samples but with more memory. The submit script keeps a master thread alive (that runs worker threads/ array jobs). The memory requirement for the master thread increases linearly with the number of samples. 
+
+2. If your cohort has a large number of samples, perhaps, you can consider splitting the cohort by some factor. For example, by sequencing time, batch, or center. We are exploring ways to scale this pipeline for larger cohorts as well.
+
+## To do
+
+ - Gene-based annotations for downstream analysis
+ - Case-control analysis
+ - VCF export
+ - Pedigree-based analysis for recessive variants
 
 ### Reference
 
