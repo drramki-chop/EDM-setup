@@ -149,5 +149,5 @@ qsub ./edm.submit.script.sh
 
 
 ## Authors
- - Ramakrishnan Rajagopalan (rajagopalanr@email.chop.edu)
+ - [Ramakrishnan Rajagopalan](https://scholar.google.com/citations?hl=en&user=OCUSDOkAAAAJ&view_op=list_works&sortby=pubdate) (rajagopalanr@email.chop.edu)
  - Shiva Ganesan (ganesans@email.chop.edu)
