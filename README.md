@@ -41,7 +41,7 @@ Please refer to clustermq documentation for other HPC environments.
 
 ## Step 4: Remove exons with low mean mappability (optional; recommended)
 
-We recently published a workflow ([Rajagopalan R et. al., 2020](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0) demonstrating that excluding exons with low mean mappability reduces the number of false-positives originating from the repetitive regions of the exome.
+We recently published a workflow ([Rajagopalan R et. al., 2020](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0) demonstrating that excluding exons with low mean mappability reduces the number of false-positives originating from the repetitive regions of the exome while maintaining the same sensitivity.
 
 <span style="color:red">Caution:</span> This excludes some ~4.5% of the exons <span style="text-decoration:underline">incuding 0.6% of the exons that may be clinically-relevant</span>.
 
