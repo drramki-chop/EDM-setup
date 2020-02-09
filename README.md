@@ -103,6 +103,27 @@ bed.file: # bedfile path or leave blank
 scheduler: sge
 ```
 
+## Step 7: Run the pipeline
+
+EDM is specifically designed to run in high-performance (HPC) computing environments and suited for large cohorts. One can run smaller cohorts as well but EDM may not make a difference in terms of computational performance. But it provides a seamless automated workflow.
+
+```
+## edm.submit.script.sh (SGE)
+
+#$ -V
+#$ -cwd
+#$ -l mem_free=12g,h_vmem=12g
+
+conda activate edm_env
+Rscript -e EDM::wrapper.script(input.yaml)
+
+```
+
+```
+qsub ./edm.submit.script.sh
+```
+
+
 
 
 
