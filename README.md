@@ -76,8 +76,7 @@ EDM forces a certain format for the workflow with minimal mandated metadata (bam
 | bams/sample2.bam | ALGS-1M| M |
 | bams/sample3.bam | ALGS-1F| F |
 
-F - female
-M - male
+F - female; M - male
 
 ## Step 6: Create a configuration file (.yml)
 
@@ -122,12 +121,3 @@ Rscript -e EDM::wrapper.script(input.yaml)
 ```
 qsub ./edm.submit.script.sh
 ```
-
-
-
-
-
-
-
-
-
