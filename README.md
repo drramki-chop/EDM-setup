@@ -76,7 +76,32 @@ EDM forces a certain format for the workflow with minimal mandated metadata (bam
 | bams/sample2.bam | ALGS-1M| M |
 | bams/sample3.bam | ALGS-1F| F |
 
+F - female
+M - male
 
+## Step 6: Create a configuration file (.yml)
+
+EDM requires a configuration file with four mandated fields (cohort.name, manifest, outputDir, scheduler). Providing `transition.probability` is optional. We recommend a transition probability of 1e-8 to reduce the number of false-positives without compromising the sensitivity to detect rare variants. If you want to go for more sensitivity, 1e-4 should work better.
+
+```
+# required
+cohort.name: Epi4k
+
+# required
+manifest: pediseq.edm.manifest.txt
+
+# required
+outputDir: ./
+
+# optional
+transition.probability: 1e-4
+
+# optional (will use the internal exon definitions if this is not provided)
+bed.file: # bedfile path or leave blank
+
+## required
+scheduler: sge
+```
 
 
 
