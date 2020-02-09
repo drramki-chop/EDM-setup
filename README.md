@@ -44,7 +44,7 @@ Please refer to [clustermq](https://cran.r-project.org/web/packages/clustermq/vi
 We recently published a workflow ([Rajagopalan R et. al., 2020](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0) demonstrating that excluding exons with low mean mappability reduces the number of false-positives originating from the repetitive regions of the exome while maintaining the same sensitivity.
 
 ```diff
-- This excludes some ~4.5% of the exons incuding 0.6% of the exons that may be clinically-relevant.
+This excludes some ~4.5% of the exons incuding 0.6% of the exons that may be clinically-relevant.
 ```
 We provide the workflow to filter the exons with low mean mappability if you have your own bed file or use the exon definitions in ExomeDepth. However, you can simply use the `exons.hg19.mappability.filtered` object provided in the EDM package (`data(exons.hg19.mappability.filtered`).
 
@@ -74,7 +74,7 @@ If you have your own exon definitions/ BED file, you can directly use the bigWig
 
 EDM forces a certain format for the workflow with minimal mandated metadata (bam, sampleID, sex). 
 ```diff
-- Column names should be the same in the manifest file (as the functions use them).</span>
+Column names should be the same in the manifest file (as the functions use them).</span>
 ```
 
 | bam   |      sampleID      |  sex |
