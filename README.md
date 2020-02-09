@@ -147,6 +147,10 @@ qsub ./edm.submit.script.sh
 
 4. We recommend a transition probability of 1e-8 for balanced performance. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
 
+### Reference
+
+1. [A Robust Model for Read Count Data in Exome Sequencing Experiments and Implications for Copy Number Variant Calling ](https://pubmed.ncbi.nlm.nih.gov/22942019)
+2. [A highly sensitive and specific workflow for detecting rare copy-number variants from exome sequencing data](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0)
 
 ## Authors
  - [Ramakrishnan Rajagopalan](https://scholar.google.com/citations?hl=en&user=OCUSDOkAAAAJ&view_op=list_works&sortby=pubdate) (rajagopalanr@email.chop.edu)
