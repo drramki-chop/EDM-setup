@@ -43,8 +43,9 @@ Please refer to [clustermq](https://cran.r-project.org/web/packages/clustermq/vi
 
 We recently published a workflow ([Rajagopalan R et. al., 2020](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0) demonstrating that excluding exons with low mean mappability reduces the number of false-positives originating from the repetitive regions of the exome while maintaining the same sensitivity.
 
-<span style="color:red">Caution:</span> This excludes some ~4.5% of the exons <span style="text-decoration:underline">incuding 0.6% of the exons that may be clinically-relevant</span>.
-
+```diff
+- __**This excludes some ~4.5% of the exons incuding 0.6% of the exons that may be clinically-relevant.**__
+```
 We provide the workflow to filter the exons with low mean mappability if you have your own bed file or use the exon definitions in ExomeDepth. However, you can simply use the `exons.hg19.mappability.filtered` object provided in the EDM package (`data(exons.hg19.mappability.filtered`).
 
 ### Workflow to filter the exons with low mean mappability (< 0.7)
