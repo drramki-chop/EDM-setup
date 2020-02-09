@@ -146,3 +146,8 @@ qsub ./edm.submit.script.sh
 3. CNV calling in chromosome X is challenging as it depends only on ~6000 exons. A decent number of samples is required to get reliable results.
 
 4. We recommend a transition probability of 1e-8 for balanced performance. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
+
+
+## Authors
+ - Ramakrishnan Rajagopalan (rajagopalanr@email.chop.edu)
+ - Shiva Ganesan (ganesans@email.chop.edu)
