@@ -17,9 +17,9 @@ Within R, install the EDM package from source.
 
 `> install.packages("EDM_0.0.1.tar.gz",type="source",repos=NULL)`
 
-## Step 3: Setup a template for [clustermq](https://cran.r-project.org/web/packages/clustermq/vignettes/userguide.html)
+## Step 3: Setup a template for [clustermq](https://cran.r-project.org/web/packages/clustermq/vignettes/userguide.html) (Optional)
 
-clustermq is installed as part of the conda environment. Now, we have to setup a template for resources for the cluster jobs.
+clustermq is installed as part of the conda environment. EDM comes with default templates for clustermq (and specific HPC environments) that can be specified in the configuration file (.yml in step 6). However, you can setup the template for resources for the cluster jobs independently (~/.clustermq_template).
 
 For SGE:
 
@@ -37,7 +37,7 @@ ulimit -v $(( 1024 * {{ memory | 4096 }} ))
 CMQ_AUTH={{ auth }} R --no-save --no-restore -e 'clustermq:::worker("{{ master }}")'
 ```
 
-Please refer to clustermq documentation for other HPC environments.
+Please refer to [clustermq](https://cran.r-project.org/web/packages/clustermq/vignettes/userguide.html) documentation for other HPC environments.
 
 ## Step 4: Remove exons with low mean mappability (optional; recommended)
 
@@ -49,12 +49,13 @@ We provide the workflow to filter the exons with low mean mappability if you hav
 
 ### Workflow to filter the exons with low mean mappability (< 0.7)
 
-In R:
+In R (with default exon definitions from ExomeDepth):
 
 ```
 > data("exons.hg19", package="ExomeDepth")
 > data("exons.hg19.X", package = "ExomeDepth")
 > exons.hg19 <- rbind(exons.hg19, exons.hg19.X)
+> exons.hg19$name <- paste0(exons.hg19$chromosome,":",exons.hg19$start,"-",exons.hg19$end,"_",exons.hg19$name)
 > write.table(exons.hg19,"exons.hg19.bed",row.names =F,sep="\t",quote=F,col.names=F)
 
 ```
@@ -63,14 +64,16 @@ In shell:
 ```
 wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/wgEncodeCrgMapabilityAlign36mer.bigWig
 bigWigAverageOverBed wgEncodeCrgMapabilityAlign36mer.bigWig exons.hg19.bed exons.hg19.mappability.tab
-cat exons.hg19.mappability.tab | awk '$NF >= 0.7' | cut -f1-4 > exons.hg19.mappability.bed  #for use in EDM workflow
+cat exons.hg19.mappability.tab | awk '$NF >= 0.7' | cut -f1-3 > exons.hg19.mappability.bed  #for use in EDM workflow
 ```
+
+If you have your own exon definitions/ BED file, you can directly use the bigWigAverageOverBed on the file.
 
 ## Step 5: Creat a manifest file for the samples
 
-EDM forces a certain format for the workflow with minimal mandated metadata (bam, sampleID, sex). Column names should be the same in the manifest file (as the functions use them).
+EDM forces a certain format for the workflow with minimal mandated metadata (bam, sampleID, sex). <span style="text-decoration:underline">Column names should be the same in the manifest file (as the functions use them).</span>
 
-| bam   |      Are      |  Cool |
+| bam   |      sampleID      |  sex |
 |:--------:|:-------------:|:-----:|
 | bams/sample1.bam | ALGS-1P| F |
 | bams/sample2.bam | ALGS-1M| M |
