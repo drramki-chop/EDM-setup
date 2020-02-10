@@ -163,9 +163,8 @@ qsub ./edm.submit.script.sh
 
 ### Reference
 
-1. [A Robust Model for Read Count Data in Exome Sequencing Experiments and Implications for Copy Number Variant Calling ](https://pubmed.ncbi.nlm.nih.gov/22942019), Bioinformatics, 28 (21), 2747-54, 2012. 
-2. [A highly sensitive and specific workflow for detecting rare copy-number variants from exome sequencing data](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0), Genome Medicine, 12 (1), 14
-2020.
+1. [A Robust Model for Read Count Data in Exome Sequencing Experiments and Implications for Copy Number Variant Calling ](https://pubmed.ncbi.nlm.nih.gov/22942019), Bioinformatics, 28(21), 2747-54, 2012. 
+2. [A highly sensitive and specific workflow for detecting rare copy-number variants from exome sequencing data](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-0712-0), Genome Medicine, 12(1), 14, 2020.
 
 ## Authors
  - Ramakrishnan Rajagopalan (rajagopalanr@email.chop.edu) [Google Scholar](https://scholar.google.com/citations?hl=en&user=OCUSDOkAAAAJ&view_op=list_works&sortby=pubdate)
