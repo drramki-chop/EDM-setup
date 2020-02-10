@@ -125,7 +125,7 @@ EDM is specifically designed to run in high-performance (HPC) computing environm
 #$ -l mem_free=12g,h_vmem=12g
 
 conda activate edm_env
-Rscript -e EDM::wrapper.script(input.yaml)
+Rscript -e 'EDM::wrapper.script(input.yaml)'
 
 ```
 
