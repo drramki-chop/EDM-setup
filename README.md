@@ -88,7 +88,7 @@ EDM forces a certain format for the workflow with minimal mandated metadata (bam
  
 ## Step 6: Create a configuration file (.yml)
 
-EDM requires a configuration file with four mandated fields (cohort.name, manifest, outputDir, scheduler). Providing `transition.probability` is optional. We recommend a transition probability of 1e-8 to reduce the number of false-positives without compromising the sensitivity to detect rare variants. If you want to go for more sensitivity, 1e-4 should work better.
+EDM requires a configuration file with four mandated fields (cohort.name, manifest, outputDir, scheduler). Providing `transition.probability` is optional. We recommend a transition probability of 1e-8 for spcificity and 1e-4 for more sensitivity.
 
 ```
 # required
@@ -146,7 +146,7 @@ qsub ./edm.submit.script.sh
 
 3. CNV calling in chromosome X is challenging as it depends only on ~6000 exons. A decent number of samples is required to get reliable results.
 
-4. We recommend a transition probability of 1e-8 for balanced performance. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
+4. We recommend a transition probability of 1e-8 for specificity. If you prefer more sensitivity, 1e-4 is the default recommended by the ExomeDepth.
 
 ###  For larger cohorts
 
