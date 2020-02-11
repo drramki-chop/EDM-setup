@@ -3,7 +3,6 @@ channels:
   - bioconda
   - conda-forge
   - defaults
-  - ggd-genomics
 dependencies:
   - snakemake=5.9.1
   - mosdepth=0.2.7
@@ -15,7 +14,6 @@ dependencies:
   - r-r.utils=2.9.2
   - r-dplyr=0.8.3
   - r-purrr=0.3.3
-  - r-doby
   - zeromq=4.3.2
   - r-profvis=0.3.6
   - r-data.table=1.12.8
