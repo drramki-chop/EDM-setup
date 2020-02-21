@@ -14,7 +14,7 @@ transition.probability: 1e-4
 bed.file: 
 
 ## required
-scheduler: sge
+hpc.scheduler: sge
 
 ##optional 
 template: template/sge_template
