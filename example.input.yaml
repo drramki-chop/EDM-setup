@@ -5,7 +5,7 @@ cohort.name: Epi4k
 manifest: pediseq.edm.manifest.txt
 
 # required
-outputDir: ./transition_prob
+output.directory: ./transition_prob
 
 # required
 transition.probability: 1e-4
