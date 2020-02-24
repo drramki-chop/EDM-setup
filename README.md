@@ -8,7 +8,7 @@ EDM depends on several software tools including R packages. We use a conda envir
 ```
 git clone https://github.com/drramki-chop/EDM.git
 conda env create -f edm_conda_env.yml
-conda activate edm_environment
+conda activate edm_env
 ```
 
 ## Step 2: Install EDM package

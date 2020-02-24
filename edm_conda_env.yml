@@ -1,4 +1,4 @@
-name: edm_environment
+name: edm_env
 channels:
   - bioconda
   - conda-forge
