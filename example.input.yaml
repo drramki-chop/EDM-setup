@@ -17,5 +17,5 @@ bed.file:
 hpc.scheduler: sge
 
 ##optional 
-template: template/sge_template
+clustermq.template: template/sge_template
 
