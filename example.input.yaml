@@ -1,21 +1,26 @@
 # required
-cohort.name: Epi4k
+cohort.name: pediseq
 
 # required
 manifest: pediseq.edm.manifest.txt
 
 # required
-output.directory: ./transition_prob
+output.directory: ./
 
 # required
 transition.probability: 1e-4
 
 # required
-bed.file: 
+bed.file: # bedfile path or leave blank
 
 ## required
 hpc.scheduler: sge
 
-##optional 
-template: template/sge_template
+## required
+env.name: edm_env ## update if using different environment name
 
+##optional 
+clustermq.template: ## user defined template - if provided certain options may change.
+
+## required
+memory: 16 ## please provide in GB without trailing characters G/M
