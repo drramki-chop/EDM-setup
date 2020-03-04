@@ -1,3 +1,6 @@
+**** Under development *****
+
+
 ## Background
 
 [ExomeDepth](https://cran.r-project.org/web/packages/ExomeDepth/index.html) is one of the most sensitive tools for detecting copy-number variants (CNVs) from exome sequencing data. ExomeDepth is an R package and it is a challenge to deal with large datasets in R/ ExomeDepth. To address this issue, EDM implements the ExomeDepth pipeline with two major changes built in. First, EDM uses mosdepth to compute coverage over exons, and implements an approximation to the algorithm to select the reference panel for performance reasons. EDM uses [clustermq](https://cran.r-project.org/web/packages/clustermq/index.html) to run the pipeline in parallel (counting reads and variant calling). 
@@ -17,7 +20,7 @@ Within R, install the EDM package from source.
 
 `> install.packages("EDM_0.0.1.tar.gz",type="source",repos=NULL)`
 
-## Step 3: Setup a template for [clustermq](https://cran.r-project.org/web/packages/clustermq/vignettes/userguide.html) (Optional)
+## Step 3: Setup a template for [clustermq](https://cran.r-project.org/web/packages/clustermq/vignettes/userguide.html)
 
 clustermq is installed as part of the conda environment. EDM comes with default templates for clustermq (and specific HPC environments) that can be specified in the configuration file (.yml in step 6). However, you can setup the template for resources for the cluster jobs independently (~/.clustermq_template).
 
@@ -34,6 +37,7 @@ For SGE:
 #$ -pe {{ cores | 1 }}             # number of cores to use per job
 
 ulimit -v $(( 1024 * {{ memory | 4096 }} ))
+conda activate edm_environment
 CMQ_AUTH={{ auth }} R --no-save --no-restore -e 'clustermq:::worker("{{ master }}")'
 ```
 
@@ -101,7 +105,7 @@ manifest: pediseq.edm.manifest.txt
 output.directory: ./
 
 # required
-transition.probability: 1e-8
+transition.probability: 1e-4
 
 # required
 bed.file: # bedfile path or leave blank
@@ -125,7 +129,7 @@ EDM is specifically designed to run in high-performance (HPC) computing environm
 #$ -l mem_free=12g,h_vmem=12g
 
 conda activate edm_env
-Rscript -e 'EDM::wrapper.script(input.yaml)'
+Rscript -e 'EDM::wrapper.script('input.yaml')'
 
 ```
 
