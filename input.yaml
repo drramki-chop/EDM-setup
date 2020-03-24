@@ -2,10 +2,10 @@
 cohort.name: egrp_genedx
 
 ## required
-manifest: /mnt/isilon/helbig_lab/inbox/cnv_genedx_manifest.txt
+manifest: cnv_genedx_manifest.txt
 
 ## required
-output.directory: /mnt/isilon/helbig_lab/inbox/genedx_cnv
+output.directory: genedx_cnv
 
 ## required
 transition.probability: 1e-4
@@ -20,7 +20,7 @@ hpc.scheduler: sge
 env.name: edm_env
 
 ## fasta
-fasta: /mnt/isilon/helbig_lab/ref_files/hg19.fa
+fasta: hg19.fa
 
 ##optional 
 clustermq.template: ## user defined template - if provided certain options may change.
