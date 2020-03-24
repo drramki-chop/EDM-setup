@@ -1,0 +1,35 @@
+#required
+cohort.name: egrp_genedx
+
+## required
+manifest: /mnt/isilon/helbig_lab/inbox/cnv_genedx_manifest.txt
+
+## required
+output.directory: /mnt/isilon/helbig_lab/inbox/genedx_cnv
+
+## required
+transition.probability: 1e-4
+
+## required
+bed.file: # bedfile path or leave blank
+
+## required
+hpc.scheduler: sge
+
+## env name
+env.name: edm_env
+
+## fasta
+fasta: /mnt/isilon/helbig_lab/ref_files/hg19.fa
+
+##optional 
+clustermq.template: ## user defined template - if provided certain options may change.
+
+## required
+memory: 24 ## please provide in GB without trailing characters G/M
+
+## optional 
+precomputed.controls: no ## if yes then autosomes and chrX data are required.
+precomputed.controls.autosomes:
+precomputed.controls.men:
+precomputed.controls.women:
