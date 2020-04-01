@@ -67,12 +67,14 @@ In R (with default exon definitions from ExomeDepth):
 In shell:
 
 ```
-wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/wgEncodeCrgMapabilityAlign36mer.bigWig
+wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/wgEncodeDukeMapabilityUniqueness35bp.bigWig
 bigWigAverageOverBed wgEncodeCrgMapabilityAlign36mer.bigWig exons.hg19.bed exons.hg19.mappability.tab
 cat exons.hg19.mappability.tab | awk '$NF >= 0.7' | cut -f1-3 > exons.hg19.mappability.bed  #for use in EDM workflow
 ```
 
 If you have your own exon definitions/ BED file, you can directly use the bigWigAverageOverBed on the file.
+
+Note: Using mappability or alignability should produce similar results while the difference between the choice of k-mer length will be noticeable (36-mer vs 100-mer).
 
 ## Step 5: Creat a manifest file for the samples
 
