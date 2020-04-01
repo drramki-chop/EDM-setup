@@ -21,9 +21,9 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 Within R, install the EDM package from source.
 
-`r
+```r
 devtools::install_github("drramki/edm")
-`
+```
 
 ## Step 3: Setup a template for [clustermq](https://cran.r-project.org/web/packages/clustermq/vignettes/userguide.html)
 
