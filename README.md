@@ -14,11 +14,16 @@ conda env create -f edm_conda_env.yml
 conda activate edm_environment
 ```
 
+If you'd like to install conda from scratch, follow the protocol here:
+```https://conda.io/projects/conda/en/latest/user-guide/install/linux.html```
+
 ## Step 2: Install EDM package
 
 Within R, install the EDM package from source.
 
-`> install.packages("EDM_0.0.1.tar.gz",type="source",repos=NULL)`
+`r
+devtools::install_github("drramki/edm")
+`
 
 ## Step 3: Setup a template for [clustermq](https://cran.r-project.org/web/packages/clustermq/vignettes/userguide.html)
 
