@@ -15,7 +15,7 @@ conda activate edm_environment
 ```
 
 If you'd like to install conda from scratch, follow the protocol here:
-```https://conda.io/projects/conda/en/latest/user-guide/install/linux.html```
+https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 ## Step 2: Install EDM package
 
