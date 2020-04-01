@@ -61,7 +61,7 @@ We provide the workflow to filter the exons with low mean mappability if you hav
 
 In R (with default exon definitions from ExomeDepth):
 
-```
+```r
 > data("exons.hg19", package="ExomeDepth")
 > data("exons.hg19.X", package = "ExomeDepth")
 > exons.hg19 <- rbind(exons.hg19, exons.hg19.X)
@@ -101,7 +101,7 @@ EDM forces a certain format for the workflow with minimal mandated metadata (bam
 
 EDM requires a configuration file with four mandated fields (cohort.name, manifest, outputDir, scheduler). Providing `transition.probability` is optional. We recommend a transition probability of 1e-8 for spcificity and 1e-4 for more sensitivity.
 
-```
+```yaml
 # required
 cohort.name: Epi4k
 
