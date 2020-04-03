@@ -2,10 +2,10 @@
 cohort.name: egrp_genedx
 
 ## required
-manifest: cnv_genedx_manifest.txt
+manifest: manifest.txt
 
 ## required
-output.directory: genedx_cnv
+output.directory: cnv
 
 ## required
 transition.probability: 1e-4
@@ -33,3 +33,6 @@ precomputed.controls: no ## if yes then autosomes and chrX data are required.
 precomputed.controls.autosomes:
 precomputed.controls.men:
 precomputed.controls.women:
+
+reproducibility: yes
+iterations: 1000
